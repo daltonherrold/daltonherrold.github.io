@@ -13085,8 +13085,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>League of Legends, developed by Riot Games, is the most popular game in the world with a peak of over 8 million players being logged in at the same time everyday. The true daily number of players is certainly much greater than this.  In this game, there are two teams, red and blue, each consisting of 5 players. Each teams goal is to destroy the other team's home base. The team that does so first wins the game. League of Legends games can be quite long since, as long as both teams base stand, the game continues. The average game length according to Riot Games is somewhere around 30 minutes.</p>
-<p>Before the game starts, each player in the game must pick a unique champion. Currently there are 152 champions in the game to choose from, but that number increases often as Riot constantly introduces new champions to the game. The game gets complex fast as beyond the 10 champions that are in the game (5 on your team and 5 on the other), there are many systems to keep in mind such as the economy system to purchase items, experience system to allow your champion access to more powerful abilities, and neutral objectives that grant powerful effects.</p>
+<p><img src="league-of-legends.jpg" alt="League of Legends"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>League of Legends, developed by Riot Games, is the most popular game in the world with a peak of over 8 million players being logged in at the same time every day. The true daily number of players is certainly much greater than this. In this game, there are two teams, red and blue, each consisting of 5 players. Each team's goal is to destroy the other team's home base. The team that does so first wins the game. League of Legends games can be quite long since, as long as both team's bases stand, the game continues. The average game length according to Riot Games is somewhere around 30 minutes.</p>
+<p>Before the game starts, each player in the game must pick a unique <a href="https://leagueoflegends.fandom.com/wiki/Champion">champion</a>. Currently, there are 152 champions in the game to choose from, but that number increases often as Riot constantly introduces new champions to the game. The game gets complex fast as, beyond the 10 champions that are in the game (5 on your team and 5 on the other), there are many systems to keep in mind such as the economic system to purchase items, experience system to allow your champion access to more powerful abilities, and neutral objectives that grant powerful effects.</p>
 
 </div>
 </div>
@@ -13101,9 +13109,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a ranked system in the game consisting of Iron, Bronze, Silver, Gold, Platinum, Diamond, Masters, and Challenger. We will be looking at a dataset consisting of statistics from the first 10 minutes of Diamond ranked North American solo games. We are going to try and see if the first 10 minutes dictates the outcome of the game as well as which statistics are the best estimators for the game outcome.</p>
-<p>Diamond players are considered to be in the top 2.4% of players according to esportstales.com, meaning that their understanding of the game is deep and they typically make high impact decisions that are likely to go well for them. As such, we believe that tracking their behaviors and seeing what leads to wins in their games is an accurate way to determine who will win a game of League of Legends.</p>
-<p>For people who do not know very much about League of Legends, this should be a great way to generate interest in the game for them and show exploratory data analysis in a unique fashion. For those who have experience in playing League of Legends, this should hopefully serve as a rough outline on what your team should prioritize in order to climb the ranks and succeed. For those who are unfamiliar with the game, we recommend this resource to check out to get a basic understanding: <a href="https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki">https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki</a>.</p>
+<p><img src="ranked.jpeg" alt="League Ranking System"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is a ranked system in the game consisting of Iron, Bronze, Silver, Gold, Platinum, Diamond, Masters, and Challenger. To see the full ranked distribution, check out this site: <a href="https://www.leagueofgraphs.com/rankings/rank-distribution">https://www.leagueofgraphs.com/rankings/rank-distribution</a>
+We will be looking at a dataset consisting of statistics from the first 10 minutes of Diamond ranked North American solo games. We are going to try and see if the first 10 minutes dictates the outcome of the game as well as which statistics are the best estimators for the game outcome.</p>
+<p>Diamond players are considered to be in the top 2.4% of players according to the resource mentioned before, meaning that their understanding of the game is deep and they typically make high impact decisions that are likely to go well for them. As such, we believe that tracking their behaviors and seeing what leads to wins in their games is an accurate way to determine who will win a game of League of Legends.</p>
+<p>For people who do not know very much about League of Legends, this should be a great way to generate interest in the game for them and uniquely show exploratory data analysis. For those who have experience in playing League of Legends, this should hopefully serve as a rough outline of what your team should prioritize to climb the ranks and succeed. For those who are unfamiliar with the game, we recommend this resource to check out to get a basic understanding: <a href="https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki">https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki</a>.</p>
 
 </div>
 </div>
@@ -13118,7 +13135,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import the needed libraries for this section of the tutorial</span>
@@ -13141,15 +13158,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For this tutorial, we have done no preprocessing to the data, and will be going through the steps of getting it ready to train ML models just like you normally would.</p>
-<p>First thing's first, lets get the dataset into python and take a thorough look around it.</p>
+<p>For this tutorial, we have done no preprocessing to the data and will be going through the steps of getting it ready to train ML models just like you normally would.</p>
+<p>First thing's first, let's get the dataset into python and take a thorough look around it.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read the dataset from within the same directory as the notebook</span>
@@ -13167,7 +13184,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13462,19 +13479,19 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see that we are working with 40 colums here, which is quite a lot. Let's take a look at each column and see if there are any we can eliminate right off the bat.</p>
+<p>We can see that we are working with 40 columns here, which is quite a lot. Let's take a look at each column and see if there are any we can eliminate right off the bat.</p>
 <ul>
 <li>gameId - The ID of the game we can use to get more statistics from the League of Legends API.</li>
 <li>blueWins - A boolean representing if the blue won. If the value is 1 then the blue team won.</li>
-<li>blueWardsPlaced - Int representing the number of "wards" (totems that grant vision) blue team placed over the game.</li>
+<li>blueWardsPlaced - Int representing the number of "<a href="https://leagueoflegends.fandom.com/wiki/Ward">wards</a>" (totems that grant vision) blue team placed over the game. </li>
 <li>blueWardsDestroyed - Int representing the number of "wards" the blue team has destroyed.</li>
 <li>blueFirstBlood - A boolean representing if blue team got "first blood", the first kill of a game.</li>
 <li>blueKills - Int representing the number of kills the blue team obtained.</li>
 <li>blueDeaths - Int representing the number of deaths the blue team had.</li>
 <li>blueAssists - Int representing the number of assists the blue team had.</li>
 <li>blueEliteMonsters - Int representing the number of high-priority neutral monsters the blue team destroyed.</li>
-<li>blueDragons - Int representing the number of times the blue team obtained dragon.</li>
-<li>blueHeralds - Int representing the number of times the blue team obtained rift herald.</li>
+<li>blueDragons - Int representing the number of times the blue team obtained <a href="https://leagueoflegends.fandom.com/wiki/dragon">dragon</a>.</li>
+<li>blueHeralds - Int representing the number of times the blue team obtained <a href="https://leagueoflegends.fandom.com/wiki/Rift_Herald_(League_of_Legends">rift herald</a>)</li>
 <li>blueTowersDestroyed - Int representing the number of towers the blue team destroyed.</li>
 <li>blueTotalGold - Int representing the total number of gold the blue team gained over the course of the game.</li>
 <li>blueAvgLevel - Float representing the average level of blue team at the time of conceding.</li>
@@ -13483,10 +13500,10 @@ div#notebook {
 <li>blueTotalJungleMinionsKilled - Int representing the number of jungle monsters killed by blue team.</li>
 <li>blueGoldDiff - Int representing the gold difference of blue team from red team.</li>
 <li>blueExperienceDiff - Int representing the experience difference of blue team from red team.</li>
-<li>blueCSPerMin - Float representing the number of minions killed/minute of blue team.</li>
+<li>blueCSPerMin - Float representing the amount of <a href="https://leagueoflegends.fandom.com/wiki/Farming">CS</a> of blue team.</li>
 <li>blueGoldPerMin - Float representing the amount of gold gained/minute of blue team.</li>
 </ul>
-<p>There are duplicates of all variables prefixied with blue for the red team (prefixed with read instead). However, to avoid redundancy and unecessary explanations, I am not going to write them here.</p>
+<p>There are duplicates of all variables prefixed with blue for the red team (prefixed with red instead). However, to avoid redundancy and unnecessary explanations, I am not going to write them here.</p>
 
 </div>
 </div>
@@ -13494,15 +13511,15 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-Wrangling">Data Wrangling<a class="anchor-link" href="#Data-Wrangling">&#182;</a></h2><p>In this section we are going to clean up the data and "wrangle" it to be more consise and better structured. This data wrangling is important as, if done correctly, it will improve the results, and speed of training, of our ML algorithms later. Part of this process is eliminating unecessary columns.</p>
-<p>The only column that it seems like we can eliminate off the bat is the gameID column. The gameID column corresponds to the Leage of Legends API reference to the game. Utilizing this number, we could request more information from the API. Since we will only be working with the data from the dataset, we will remove this column since it has no effect on whether or not a game is won or not. So, lets remove it!</p>
+<h2 id="Data-Wrangling">Data Wrangling<a class="anchor-link" href="#Data-Wrangling">&#182;</a></h2><p>In this section we are going to clean up the data and "wrangle" it to be more concise and better structured. This data wrangling is important as, if done correctly, it will improve the results, and speed of training, of our ML algorithms later. Part of this process is eliminating unnecessary columns.</p>
+<p>The only column that it seems like we can eliminate off the bat is the gameID column. The gameID column corresponds to the League of Legends API reference to the game. Utilizing this number, we could request more information from the API. Since we will only be working with the data from the dataset, we will remove this column since it does not affect whether or not a game is won or not. So, let's remove it!</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dropping the gameID column</span>
@@ -13520,7 +13537,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13809,8 +13826,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Upon closer inspection of the data columns, it seems like certain columns may be a direct linear combination of other columns. For example, total experience and average level should be directly related. Aditionally, CSPerMin and TotalMinionsKilled should be directly related. This is the same with total gold and gold per minute. We want to look at getting rid of these as they could bias our algorithm toward a particular feature.</p>
-<p>Let me explain that a little further. If we were to keep two features that were the same, say total experience and average level. If these two were indeed the same, then by keeping both in our algorithm we are putting more weight on the experience than we are other features since there are two features for experience. Since we don't want a particular feature to be weighted higher than another, we will try and remove all of these features which are linearly correlated.</p>
+<p>Upon closer inspection of the data columns, it seems like certain columns may be a direct linear combination of other columns. For example, total experience and average level should be directly related. Additionally, CSPerMin and TotalMinionsKilled should be directly related. This is the same with total gold and gold per minute. We want to look at getting rid of these as they could bias our algorithm toward a particular feature.</p>
+<p>Let me explain that a little further. If we were to keep two features that were the same, say total experience and average level. If these two were indeed the same, then by keeping both in our algorithm we are putting more weight on the experience than we are on other features since there are two features for experience. Since we don't want a particular feature to be weighted higher than another, we will try and remove all of these features which are linearly correlated.</p>
 <p>Let's go ahead and take a closer look at total experience and average level and see if we can conclusively say that they are linearly correlated, and if so, remove one of them.</p>
 
 </div>
@@ -13818,7 +13835,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating the plot</span>
@@ -13873,14 +13890,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see, there is quite obviously a positive linear relationship between total experience and average level. In fact, it seem as though they are probably the same thing, just average level seems binned and therefore, less acurate. For this reason, we are going to remove average level for both the blue and red teams. We will leave total experience in tact since it is more presise.</p>
+<p>As we can see, there is quite obviously a positive linear relationship between total experience and average level. In fact, it seems as though they are probably the same thing, just average level seems binned and therefore, less accurate. For this reason, we are going to remove average level for both the blue and red teams. We will leave total experience intact since it is more precise.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dropping both red and blue average level</span>
@@ -13895,14 +13912,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now lets take a look at if there is a correlation between average CS per minute and total minions killed. Once again, it seems obvious that there should be, but it would be a bad idea to assume without checking.</p>
+<p>Now let's take a look at if there is a correlation between average CS per minute and total minions killed. Once again, it seems obvious that there should be, but it would be a bad idea to assume without checking.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating a new plot</span>
@@ -13955,14 +13972,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Wow, that is a linear combination right there. Since it forms a perfect line, looking at the axes, we can determine that average CS per minute is most likely just total minions divided by 10 (since this is the first 10 minutes of the game). For this reason we will remove one of these features. Since it is a perfect linear combination, it shouldn't matter what feature we delete here, but we are going to delete the average CS per minute feature for both red and blue. This is because we will do our own data scaling later and it might be a tad better to start with the origonal total CS values.</p>
+<p>Wow, that is a linear combination right there. Since it forms a perfect line, looking at the axes, we can determine that average CS per minute is most likely just total minions divided by 10 (since this is the first 10 minutes of the game). For this reason, we will remove one of these features. Since it is a perfect linear combination, it shouldn't matter what feature we delete here, but we are going to delete the average CS per minute feature for both red and blue. This is because we will do our own data scaling later and it might be a tad better to start with the original total CS values.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dropping the average cs per minute for both red and blue teams</span>
@@ -13984,7 +14001,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating a new plot</span>
@@ -14037,14 +14054,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once again these columns are perfect linear combinations, with gold per minute appearing to be total gold divided by 10. For the exact same reason as the last feature we looked at, we are going to drop gold per minute for both the red and the blue team.</p>
+<p>Once again these columns are perfect linear combinations, with gold per minute appearing to be total gold divided by 10. For the exact same reason as the last feature we looked at, we are going to drop gold per minute for both the red and the blue teams.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dropping the average gold per minute for both red and blue teams</span>
@@ -14066,7 +14083,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">games</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14082,7 +14099,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -14335,14 +14352,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is looking pretty good so far! However, there is still some more work to be done to it. Taking a look at the dataset, there seems to be 2 more features that we can eliminate easily without reducing the utility of the dataset. The features in question are redGoldDiff and redExperienceDiff since the are just the negation of the features blueGoldDiff and blueExperienceDiff. There is no need to have extra complexity in our model for these features since they have already been accounted for once.</p>
+<p>This is looking pretty good so far! However, there is still some more work to be done to it. Taking a look at the dataset, there seem to be 2 more features that we can eliminate easily without reducing the utility of the dataset. The features in question are redGoldDiff and redExperienceDiff since they are just the negation of the features blueGoldDiff and blueExperienceDiff. There is no need to have extra complexity in our model for these features since they have already been accounted for once.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Removing the two features that are redundant</span>
@@ -14357,14 +14374,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Upon further inspection of the dataset, it appears that we can also drop the features blueEliteMonsters and redEliteMonsters. This is because this feature is just a sum of the number of dragons and Rift Heralds that a team has killed. Since we already have two features for these epic monsters separatly, there is no reason to keep a total counter of all of them together.</p>
+<p>Upon further inspection of the dataset, it appears that we can also drop the features blueEliteMonsters and redEliteMonsters. This is because this feature is just a sum of the number of dragons and Rift Heralds that a team has killed. Since we already have two features for these epic monsters separately, there is no reason to keep the total count of all of them together.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dropping the two unecessary features</span>
@@ -14386,7 +14403,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dropping the 4 columns that area already accounted for</span>
@@ -14401,7 +14418,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This last feature drop actually brought up a good idea for other ways to simplify our dataset. What is important for determining the outcome of a game is not the kills, deaths, and assists for either team. We do not want to look at these features separatly, but rather as a single feature called KDA difference.</p>
+<p>This last feature drop brought up a good idea for other ways to simplify our dataset. What is important for determining the outcome of a game is not the kills, deaths, and assists for either team. We do not want to look at these features separately, but rather as a single feature called KDA difference.</p>
 <p>Before calculating this difference, which will involve calculating the KDA for each team, check if there are any null values that we will have to deal with.</p>
 
 </div>
@@ -14409,7 +14426,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">games</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
@@ -14425,7 +14442,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -14469,15 +14486,15 @@ dtype: int64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>That is great, there are no missing values for us to have to fill in.</p>
-<p>Now that we know this, we can get on with out KDADifference feature. We will be using the following function, KDA = (Kills + Assists)/Deaths, given by Riot Games to calculate the KDA for each team. Once we calculate the KDA for each team, we will subtract the KDAs to give us the KDADifference.</p>
-<p>There is one subtlety to this that I will mention before we get into it. If deaths is 0, that will be a problem since we would be trying to divide by 0. So before the calculation we should make sure that instead of dividing by 0, we divide by 1.</p>
+<p>Now that we know this, we can get on with our KDADifference feature. We will be using the following function, KDA = (Kills + Assists)/Deaths, given by Riot Games to calculate the KDA for each team. Once we calculate the KDA for each team, we will subtract the KDAs to give us the KDADifference.</p>
+<p>There is one subtlety to this that I will mention before we get into it. If deaths is 0, that will be a problem since we would be trying to divide by 0. So before the calculation, we should make sure that instead of dividing by 0, we divide by 1.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_row_kda</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
@@ -14508,7 +14525,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">games</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14524,7 +14541,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -14699,15 +14716,15 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I think that cleaned up our dataset a lot, so let's look back at our dataset and see if there are other places that we can simplify our dataset in the same ways.</p>
-<p>I think that this can be done for CS and Jungle CS, since at the end of the day it doesn't matter how much CS either team has. It matters what the difference is between the two teams CS.</p>
+<p>That cleaned up our dataset a lot, so let's look back at our dataset and see if there are other places that we can simplify our dataset in the same ways.</p>
+<p>This can be done for CS and Jungle CS since at the end of the day it doesn't matter how much CS either team has. It matters what the difference is between the two teams CS.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the difference between the teams total minions killed</span>
@@ -14745,7 +14762,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the difference in wards between blue and red</span>
@@ -14779,7 +14796,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">games</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14795,7 +14812,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -14962,7 +14979,7 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Durring this section, we want to explore the data and any correlations that may exist. We want to begin to determine what features are going to be important to us durring the prediction phase.First, we are going to take a look at some basic correlations, such as does getting the first kill in the game give you a better chance of winning? What about the getting the first epic monster kill? The first turret kill? Looking further down the line, we will take a look at the more complex relationships such as kills, deaths and assists to see if we can see any trends.</p>
+<p>During this section, we want to explore the data and any correlations that may exist. We want to begin to determine what features are going to be important to us during the prediction phase. First, we are going to take a look at some basic correlations, such as does getting the first kill in the game gives you a better chance of winning? What about getting the first epic monster kill? Does getting the first turret kill make a difference? Looking further down the line, we will take a look at the more complex relationships such as kills, deaths, and assists to see if we can see any trends.</p>
 
 </div>
 </div>
@@ -14970,7 +14987,7 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First, let's take a look at the chance of winning the game given first blood. First blood is an important metric to track, not only because of the morale boost it provides your team to get the first kill, but it is also worth 33% more gold than a normal kill: granting 400 gold instead of the normal 300 gold. For this, we will be calculating the conditional probability of winning given that the team got first blood, written as P(winning|first blood).</p>
+<p>First, let's take a look at the chance of winning the game given first blood. First blood is an important metric to track, not only because of the morale boost it provides your team to get the first kill, but it is also worth 33% more gold than a normal kill: granting 400 gold instead of the normal 300 gold. For this, we will be calculating the <a href="https://en.wikipedia.org/wiki/Conditional_probability">conditional probability</a> of winning given that the team got first blood, written as P(winning|first blood).</p>
 <p>To calculate this, we will calculate the number of times a team won the game and got first blood. We will then divide that by the total number of times that a team got first blood. This will give us the conditional probability that we are after.</p>
 
 </div>
@@ -14978,7 +14995,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a new plot</span>
@@ -15038,15 +15055,15 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Based on these values, we can see that given a certain team achieves first blood within the first 10 minutes, they are favored to win at about a 60% chance, written P(winning|first blood)=.60. A 60% chance of winning is pretty high, certainly higher than casino odds. It is important to remember however, that it is not guarenteed that a team will achieve a first blood within the first 10 minutes. Therefore, we must continue looking at other features as well.</p>
-<p>Next, let's take a look at what effect dragon kills have on the favorability of a team to win. We will be using the same equaltion for conditional probability described above, only this time we will be finding the probability of winning the game given at least one dragon kill. This equation can be written as P(winning|at least one dragon kill).</p>
+<p>Based on these values, we can see that given a certain team achieves first blood within the first 10 minutes, they are favored to win at about a 60% chance, written P(winning|first blood)=.60. A 60% chance of winning is pretty high, certainly higher than casino odds. It is important to remember, however, that it is not guaranteed that a team will achieve the first blood within the first 10 minutes. Therefore, we must continue looking at other features as well.</p>
+<p>Next, let's take a look at what effect dragon kills have on the favorability of a team to win. We will be using the same equation for conditional probability described above, only this time we will be finding the probability of winning the game given at least one dragon kill. This equation can be written as P(winning|at least one dragon kill).</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a new plot</span>
@@ -15107,7 +15124,7 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see that this is a more influental statistic for predicting winning a game than first blood is. We can see that P(winning|at least one dragon)=.633 average across both teams. This makes sense because of the impacts that a single dragon can have for the entirety of a game. Dragon is a neutral objective that provides powerful buffs that increase according to the number of dragons you are able to slay. Because of these powerful, permanent, and potentially gamebreaking effects getting a dragon does boost your chances to win tremendously.</p>
+<p>We can see that this is a more influential statistic for predicting winning a game than first blood is. We can see that P(winning|at least one dragon)=.633 average across both teams. This makes sense because of the impacts that a single dragon can have for the entirety of a game. Dragon is a neutral objective that provides powerful buffs that increase according to the number of dragons you can slay. Because of these powerful, permanent, and potentially game-breaking effects getting a dragon does boost your chances to win tremendously.</p>
 <p>Next, we will determine if a dragon or a rift herald is more important by looking at the probability of winning given a rift herald, written as P(winning|at least one rift herald), determined using the conditional probability formula. By contrasting our results with the results obtained for the probability of winning with at least one dragon, we should be able to understand which epic monster is more influential.</p>
 
 </div>
@@ -15115,7 +15132,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create the plot</span>
@@ -15183,7 +15200,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup the graph</span>
@@ -15244,16 +15261,16 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Based off the above, it seems that destroying a tower within the first 10 minutes significantly increases your chances of winning more so then securing a dragon, Rift Herald, or First Blood. Intuitively, this makes sense at it is much harder to destroy a tower than it is to get first blood or an epic monster kill. Additionally, with how economy focused League of Legends is, it makes sense that granting global gold on top of map advantage would lead to a victory.</p>
-<p>Next lets look at some of the other features to see if we can find a correlation between them. For these features, we will not longer be looking at conditional probability, we will be looking at histograms. If the data is unimodal, that would show us that the feature does not significantly impact win percentage for either team. If the data is bimodal, that means that there is a difference between when blue team normally wins and when the red team normally wins for that feature. This would indicate to us that the feature is significant.</p>
-<p>To start, we will be looking at a histogram of Gold Differece. Just a note that gold differences are with respect to the blue team. This means that positive gold differences signify that blue is ahead in gold, and negative gold differences mean that red is ahead.</p>
+<p>Based on the above, it seems that destroying a tower within the first 10 minutes significantly increases your chances of winning more so than securing a dragon, Rift Herald, or First Blood. Intuitively, this makes sense at it is much harder to destroy a tower than it is to get first blood or an epic monster kill. Additionally, with how focused League of Legends is on the economy, it makes sense that granting global gold on top of map advantage would lead to a victory.</p>
+<p>Next, let's look at some of the other features to see if we can find a correlation between them. For these features, we will no longer be looking at conditional probability, we will be looking at histograms. If the data is unimodal, that would show us that the feature does not significantly impact the win percentage for either team. If the data is bimodal, that means that there is a difference between when the blue team normally wins and when the red team normally wins for that feature. This would indicate to us that the feature is significant.</p>
+<p>To start, we will be looking at a histogram of Gold Difference. Just a note that gold differences are with respect to the blue team. This means that positive gold differences signify that blue is ahead in gold, and negative gold differences mean that red is ahead.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup the graph</span>
@@ -15302,9 +15319,7 @@ dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The red section represents times where red team won, blue section represents times the blue team has won, and the purple section represents times where both teams have won before. 
-It is clear that once your gold lead for your team hits around the 5000 benchmark, the game is nearly yours!
-This data is bimodal and that is expected for gold difference. The more gold lead that blue has, the more probabilistic it is that they will win. The same goes for red. Therefore, gold lead does have a significant impact. Of course there are times when teams win even when they are very behind in gold, but they are few and far between (and usually due to human error)</p>
+<p>The red section represents times where the red team won and the blue section represents times the blue team has won, and the purple section represents times where both teams have won before. It is clear that once your gold lead for your team hits around 5000, the game is nearly yours! This data is bimodal and that is expected for the gold difference. The more gold lead that blue has, the more probabilistic it is that they will win. The same goes for red. Therefore, gold lead does have a significant impact. Of course, there are times when teams win even when they are very behind in gold, but they are few and far between (and usually due to human error).</p>
 <p>Next, let's take a look at experience.</p>
 
 </div>
@@ -15312,7 +15327,7 @@ This data is bimodal and that is expected for gold difference. The more gold lea
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get a new graph</span>
@@ -15361,8 +15376,7 @@ This data is bimodal and that is expected for gold difference. The more gold lea
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The red section represents times where red team won, blue section represents times the blue team has won, and the purple section represents times where both teams have won before. 
-It is clear that having an experience lead will result in having a lead for your team since the data is bimodal. For both blue and red team, there is a tendency to win if you have the experience lead, with the chance to win increasing as you get a higher and higher experience lead. At around a 3750 gold experience lead for your team, you can expect to win the game. As such, experience is an important factor in determining if you will win a game of League.</p>
+<p>It is clear that having an experience lead will result in having a lead for your team since the data is bimodal. For both the blue and red teams, there is a tendency to win if you have the experience lead, with the chance to win increasing as you get a higher and higher experience lead. At around a 3750 gold experience lead for your team, you can expect to win the game. As such, experience is an important factor in determining if you will win a game of League.</p>
 <p>Now, let's look at KDA difference.</p>
 
 </div>
@@ -15370,7 +15384,7 @@ It is clear that having an experience lead will result in having a lead for your
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start up a new plot</span>
@@ -15419,7 +15433,7 @@ It is clear that having an experience lead will result in having a lead for your
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This data is barely bimodal (looks basically unimodal) which indicates that KDA is less important than other factors. While it is clear based on the graph that having a KDA lead over your opponent will result in wins, the cutoff is not as bold as it is with the other metrics previously mentioned. It appears at slightly above 10 KDA differenece for your team, you can expect to win. But for the data within those bounds, it is not as clear cut as to which team will win as it is with our other data. That being said, KDA is a factor in determining if you will win the game.</p>
+<p>This data is barely bimodal (looks basically unimodal) which indicates that KDA is less important than other factors. While it is clear based on the graph that having a KDA lead over your opponent will result in wins, the cutoff is not as bold as it is with the other metrics previously mentioned. It appears at slightly above 10 KDA difference for your team, you can expect to win. But for the data within those bounds, it is not as clear cut as to which team will win as it is with our other data. That being said, KDA is a factor in determining if you will win the game.</p>
 <p>Next, we will be looking at CS.</p>
 
 </div>
@@ -15427,7 +15441,7 @@ It is clear that having an experience lead will result in having a lead for your
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start a new plot</span>
@@ -15476,7 +15490,7 @@ It is clear that having an experience lead will result in having a lead for your
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This data looks barely bimodal, indicating that there is a marginal importance on CS in a win. Although a CS lead is definitely a non-trivial factor due to the amount of gold that CS provides, it is clear that it is completely possible for upsets to occur despite a CS lead. A CS lead of around 80 will guarantee your team a win, but as with KDA, there is a chance for a slight lead to not really have an impact on winning the game. There is a lot of overlap in the center meaning that unless you have a very sizeable lead, the statistic is not the most accurate in predicting who will win.</p>
+<p>This data looks barely bimodal, indicating that there is a marginal importance on CS in a win. Although a CS lead is a non-trivial factor due to the amount of gold that CS provides, it is clear that upsets can occur despite a CS lead. A CS lead of around 80 will guarantee your team a win, but as with KDA, there is a chance for a slight lead to not really have an impact on winning the game. There is a lot of overlap in the center meaning that unless you have a very sizeable lead, the statistic is not the most accurate in predicting who will win.</p>
 <p>The next feature we will be taking a look at is jungle CS, which is the amount of jungle minions killed.</p>
 
 </div>
@@ -15484,7 +15498,7 @@ It is clear that having an experience lead will result in having a lead for your
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup a new graph</span>
@@ -15533,14 +15547,14 @@ It is clear that having an experience lead will result in having a lead for your
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This graph looks unimodal, indicating a insignificant impact on whether or not a team will win a game. Jungle CS seems to have even less impact then regular, across the board, team CS. There is a lot of purple cross section, meaning that there were many instances where despite a jungle CS lead, the team at a disadvantage in this metric won anyways. Due to this uncertaintly and the unimodal nature of the graph, it is in our best interest to remove it from the model as we do not want to add any unecessary complexity to our model.</p>
+<p>This graph looks unimodal, indicating an insignificant impact on whether or not a team will win a game. Jungle CS seems to have even less impact than regular, across the board, team CS. There is a lot of purple cross-section, meaning that there were many instances where despite a jungle CS lead, the team at a disadvantage in this metric won anyway. Due to this uncertainty and the unimodal nature of the graph, it is in our best interest to remove it from the model as we do not want to add any unnecessary complexity to our model.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Removing Jungle CS as a feature</span>
@@ -15562,7 +15576,7 @@ It is clear that having an experience lead will result in having a lead for your
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start the graph</span>
@@ -15619,7 +15633,7 @@ It is clear that having an experience lead will result in having a lead for your
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">games</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;blueWardDiff&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15640,7 +15654,7 @@ It is clear that having an experience lead will result in having a lead for your
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Start the graph</span>
@@ -15696,7 +15710,7 @@ It is clear that having an experience lead will result in having a lead for your
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">games</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;blueDestWardDiff&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15717,7 +15731,7 @@ It is clear that having an experience lead will result in having a lead for your
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Overall, we have a good idea as to what influences winning a game of League of Legends. It seems that getting a tower, dragon, rift herald or first blood within the first 10 minutes of the game make your chances of winning the game at least 60% which is very good. Aditionally, we concluded that gold difference and experience difference contribute the most to a teams win. KDA difference, CS difference, and ward difference matter, but not near as much as the first two. We further concluded that jungle CS difference, ward difference, and wards destroyed difference do not matter at all and opted to remove them from the dataset to avoid adding any unecessary complexity for when we train our ML models.</p>
+<p>Overall, we have a good idea as to what influences winning a game of League of Legends. It seems that getting a tower, dragon, rift herald, or first blood within the first 10 minutes of the game increases your chances of winning the game at least 60% which is very good. Additionally, we concluded that gold difference and experience difference contribute the most to a team's win. KDA difference, CS difference, and ward difference matter, but not near as much as the first two. We further concluded that jungle CS difference, ward difference, and wards destroyed difference do not matter at all and opted to remove them from the dataset to avoid adding any unnecessary complexity for when we train our ML models.</p>
 
 </div>
 </div>
@@ -15732,7 +15746,7 @@ It is clear that having an experience lead will result in having a lead for your
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this section, we are going to focus on trying to predict which team will win a game of League of Legends when given the first 10 minutes of data. We will be testing out many different models, attempting to find the one that gives us the best results. After this model is determined, we will attempt to improve it even further by fine-tuning it's hyperparameters.</p>
+<p>In this section, we are going to focus on trying to predict which team will win a game of League of Legends when given the first 10 minutes of data. We will be testing out many different models, attempting to find the one that gives us the best results. After this model is determined, we will attempt to improve it even further by fine-tuning its hyperparameters.</p>
 <p>The first thing that we have to do is import the models that we want.</p>
 
 </div>
@@ -15740,16 +15754,15 @@ It is clear that having an experience lead will result in having a lead for your
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">LinearSVC</span><span class="p">,</span> <span class="n">NuSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">,</span> <span class="n">GradientBoostingClassifier</span><span class="p">,</span> <span class="n">AdaBoostClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">,</span> <span class="n">GradientBoostingClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.discriminant_analysis</span> <span class="kn">import</span> <span class="n">LinearDiscriminantAnalysis</span>
 </pre></div>
 
@@ -15761,15 +15774,15 @@ It is clear that having an experience lead will result in having a lead for your
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We will be defining a function that we can use later to return us a dict of all of our untrained models. This will be important for later when we do 10-fold cross validation as we do not want to refit an already fit model with new training data.</p>
-<p>Here we will also define two dicts, one to hold all of the scores of the different models and another one to hold all of the errors.</p>
+<p>We will be defining a function that we can use later to return us a dictionary of all of our untrained models. This will be important for later when we do 10-fold cross-validation as we do not want to refit an already fit model with new training data.</p>
+<p>Here we will also define two dictionaries, one to hold all of the scores of the different models and another one to hold all of the errors.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Function to return newly created models</span>
@@ -15821,14 +15834,14 @@ It is clear that having an experience lead will result in having a lead for your
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that we have our models, we are actually going to start training and testing them to determine which one is the best. To do this, we will use 10-fold cross validation. This means that we are going to split up our data into 10 groups, each group containing both training and testing data. Then, for each of these 10 fold we will train all of the models on the training data and score them with the testing data. Using these 10 scores, we will determine which performed the best.</p>
+<p>Now that we have our models, we are finally going to start training and testing them to determine which one is the best. To do this, we will use 10-fold cross-validation. This means that we are going to split up our data into 10 groups, each group containing both training and testing data. Then, for each of these 10 folds, we will train all of the models on the training data and score them with the testing data. If you would like to learn more about cross-validation, check out this beginner friendly intro <a href="https://machinelearningmastery.com/k-fold-cross-validation/">here</a>. Using these 10 scores, we will determine which performed the best.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import the necessary functions for training, testing, and evaluating</span>
@@ -15874,14 +15887,14 @@ It is clear that having an experience lead will result in having a lead for your
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we have the results which are scores and errors for each models for each of the 10 folds. Let's get that into a more readable format for us so we can easily determine which is the best.</p>
+<p>Now we have the results which are scores and errors for each model for each of the 10 folds. Let's get that into a more readable format for us so we can easily determine which is the best.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a new dataframe to display the analysis</span>
@@ -15921,7 +15934,7 @@ It is clear that having an experience lead will result in having a lead for your
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[37]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -16012,14 +16025,14 @@ It is clear that having an experience lead will result in having a lead for your
     </tr>
     <tr>
       <th>RandomForest</th>
-      <td>0.698381</td>
-      <td>0.716771</td>
-      <td>0.740891</td>
-      <td>0.013622</td>
-      <td>0.259109</td>
-      <td>0.283229</td>
-      <td>0.301619</td>
-      <td>0.013622</td>
+      <td>0.702429</td>
+      <td>0.716672</td>
+      <td>0.739879</td>
+      <td>0.011288</td>
+      <td>0.260121</td>
+      <td>0.283328</td>
+      <td>0.297571</td>
+      <td>0.011288</td>
     </tr>
     <tr>
       <th>K-Nearest Neighbors</th>
@@ -16034,25 +16047,25 @@ It is clear that having an experience lead will result in having a lead for your
     </tr>
     <tr>
       <th>BaggingClassifier</th>
-      <td>0.663968</td>
-      <td>0.689137</td>
-      <td>0.722672</td>
-      <td>0.018327</td>
-      <td>0.277328</td>
-      <td>0.310863</td>
-      <td>0.336032</td>
-      <td>0.018327</td>
+      <td>0.672065</td>
+      <td>0.693794</td>
+      <td>0.710526</td>
+      <td>0.012390</td>
+      <td>0.289474</td>
+      <td>0.306206</td>
+      <td>0.327935</td>
+      <td>0.012390</td>
     </tr>
     <tr>
       <th>Decision Tree</th>
-      <td>0.606275</td>
-      <td>0.639640</td>
-      <td>0.678138</td>
-      <td>0.024515</td>
-      <td>0.321862</td>
-      <td>0.360360</td>
-      <td>0.393725</td>
-      <td>0.024515</td>
+      <td>0.610324</td>
+      <td>0.639335</td>
+      <td>0.664980</td>
+      <td>0.017595</td>
+      <td>0.335020</td>
+      <td>0.360665</td>
+      <td>0.389676</td>
+      <td>0.017595</td>
     </tr>
   </tbody>
 </table>
@@ -16069,17 +16082,17 @@ It is clear that having an experience lead will result in having a lead for your
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Looks like Logistic Regression is the best model at predicting wins for us, and decision trees are the weakest.</p>
-<p>Logistic Regression is so strong because of the precautions we took with our data. For one we made sure that no columns were just linear combinations of one another. Additionally, we made sure to get rid of some variables that could have created a lot of strange conclusions such as ward kills and adding a variable with that much variance would have seriously threw things around. Additionally, our value we are trying to determine which is wins is categorical with a 0 attached for loses and 1 attached for wins which is the ideal situation for logistic regression. We also are able to see from the earlier charts and graphs we made earlier that the data is predominantly linear in determining a win. For example, the gold difference and win ratio histogram appears extremely linear, with a gold difference closer to zero resulting in essentially a coin flip, but as you spread out from that center, you see a steady and linear trend for either teams win rate increasing as you give them a higher and higher gold lead. The fact that the logistic regression model fits our data so well implies that the majority of the variables we took into account are in fact linearly related with win rate!</p>
-<p>Decision Trees might be some of the weakest because of the sheer amount of variables we are considering. Although there are some variables we discussed earlier like the Jungle CS difference which does not do nearly as good of a job of predicting a win as say, having a turret destroyed, that variable is taken account in the Decision Tree which may result in overfitting. That being said, Jungle CS difference is not arbitrary enough to get rid of, and is still a tangible advantage that can be gained, as such it is an important metric to consider. As such, just given our data, Decision Trees fall short of being very good at predicting a win.
+<p>Logistic Regression is so strong because of the precautions we took with our data. For one we made sure that no columns were just linear combinations of one another. Additionally, we made sure to get rid of some variables that could have created a lot of strange conclusions such as ward kills, and adding a variable with that much variance would have seriously thrown things around. Additionally, our value we are trying to determine which is wins is categorical with a 0 attached for loses and 1 attached for wins which is the ideal situation for logistic regression. We also can see from the earlier charts and graphs we made earlier that the data is predominantly linear in determining a win. For example, the gold difference and win ratio histogram appears extremely linear, with a gold difference closer to zero resulting in essentially a coin flip, but as you spread out from that center, you see a steady and linear trend for either team win rate increasing as you give them a higher and higher gold lead. The fact that the logistic regression model fits our data so well implies that the majority of the variables we took into account are linearly related to the win rate!</p>
+<p>Decision Trees might be some of the weakest because of the sheer amount of variables we are considering. Although there are some variables we discussed earlier like the Jungle CS difference which does not do nearly as good of a job of predicting a win as say, having a turret destroyed, that variable is taken into account in the Decision Tree which may result in overfitting. That being said, Jungle CS difference is not arbitrary enough to get rid of and is still a tangible advantage that can be gained, as such it is an important metric to consider. As such, just given our data, Decision Trees fall short of being very good at predicting a win.
 Additionally, because League of Legends is such a high-variance game, it may result in the Decision Tree making conclusions that are not entirely correct 100% of the time.</p>
-<p>Lets take a closer look at it and see if we can get it any better by using GridSearchCV to compute the optimum values for each of our hyperparameters.</p>
+<p>Let's take a closer look at it and see if we can get it any better by using GridSearchCV to compute the optimum values for each of our hyperparameters. Click <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">here</a> to learn more about GridSearchCV.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import GridSearchCV for finding hyperparameters</span>
@@ -16130,7 +16143,7 @@ Additionally, because League of Legends is such a high-variance game, it may res
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Well, that is not as much of an improvement as we were hoping for. However, 0.01% of an increase is still an increase! I think that this is the best that we can do for League of Legends given the first 10 minutes of data. The reasoning for this little improvement is most likely due to the unpredictability of League of Legends. No matter how much more a team is favored to win, humans are not perfect and any small mistake can change the tides in an otherwise won game.</p>
+<p>Well, that is not as much of an improvement as we were hoping for. However, 0.01% of an increase is still an increase though! I think that this is the best that we can do for League of Legends given the first 10 minutes of data. The reasoning for this little improvement is most likely due to the unpredictability of League of Legends. No matter how much more a team is favored to win, humans are not perfect and any small mistake can change the tides in an otherwise won game.</p>
 
 </div>
 </div>
@@ -16145,9 +16158,9 @@ Additionally, because League of Legends is such a high-variance game, it may res
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>League is a complex game, and although it is probably not likely to be 100% accurate in determining who will win a game of League just based off the first 10 minutes, we were pretty accurate. We were able to determine pretty strong predictors for whether a team will win with our discoveries such as if a team gets a dragon in the first 10 minutes, that is a decent predictor that they will win the game.</p>
-<p>There are a lot of different factors at play, and even when a game looks like it is won for one team, human error can always turn the tides. That is why it is not possible to get better accuracy from only the fist 10 minutes.</p>
-<p>Our next goal is to predict which team will win at any given time during a game, and see how accurate that can be over time. But that is in the future. For now, from the first 10 minutes in a diamond game, a 75.5% accuracy is pretty good given the unpredictible nature of League of Legends. I would love to try this out with my own games, however, neither me nor my partner are Diamond because we suck at the game. I hope you found this tutorial helpful and maybe you will be able to test it out on your own games!</p>
+<p>League is a complex game, and although it is probably not likely to be 100% accurate in determining who will win a game of League just based on the first 10 minutes, we were pretty accurate. We were able to determine pretty strong predictors for whether a team will win with our discoveries such as if a team gets a dragon in the first 10 minutes, that is a decent predictor that they will win the game.</p>
+<p>There are a lot of different factors at play, and even when a game looks like it is won for one team, human error can always turn the tides. That is why it is not possible to get better accuracy from only the first 10 minutes.</p>
+<p>Our next goal is to predict which team will win at any given time during a game, and see how accurate that can be over time. But that is in the future. For now, from the first 10 minutes in a diamond game, a 75.5% accuracy is pretty good given the unpredictable nature of League of Legends. I would love to try this out with my own games, however, neither I nor my partner is Diamond because we suck at the game. I hope you found this tutorial helpful and maybe you will be able to test it out on your games!</p>
 
 </div>
 </div>
